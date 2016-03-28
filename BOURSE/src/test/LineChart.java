@@ -41,6 +41,8 @@ public class LineChart extends ApplicationFrame implements Runnable
       dataset.addSeries( firefox );          
       dataset.addSeries( chrome );    
       ChartPanel chartPanel = new ChartPanel( xylineChart );
+      
+      chartPanel.setToolTipText("hello");
       chartPanel.setPreferredSize( new java.awt.Dimension( 560 , 367 ) );
       final XYPlot plot = xylineChart.getXYPlot( );
       XYLineAndShapeRenderer renderer = new XYLineAndShapeRenderer( );
@@ -71,32 +73,12 @@ public class LineChart extends ApplicationFrame implements Runnable
 		});
    }
    
-  /* private XYDataset createDataset( )
-   {
-             
-    
-     
-      
-             
-     final XYSeries iexplorer = new XYSeries( "InternetExplorer" );          
-      iexplorer.add( 3.0 , 4.0 );          
-      iexplorer.add( 4.0 , 5.0 );          
-      iexplorer.add( 5.0 , 4.0 );         
-              
-      dataset.addSeries( firefox );          
-     dataset.addSeries( chrome );          
-     // dataset.addSeries( iexplorer );
-      return dataset;
-   }
-*/
+
    public static void main( String[ ] args ) 
    {
       LineChart chart = new LineChart("boussad's tests", "two charts in one panel");
-      chart.pack( );          
-     // RefineryUtilities.centerFrameOnScreen( chart );          
+      chart.pack( );                  
       chart.setVisible( true );
-    //  Thread chronoThread = new Thread();
-	//	chronoThread.start();
       chart.add(start);
    }
 
@@ -104,7 +86,7 @@ public class LineChart extends ApplicationFrame implements Runnable
 public void run() {
 	while (!stop) {
 		try {
-			Thread.sleep((long) (10000*Math.random()));
+			Thread.sleep(1000);
 		} catch (InterruptedException e) {
 			System.out.println(e.getMessage());
 		}
@@ -112,7 +94,6 @@ public void run() {
 		 firefox.add( x++ ,Math.random());      
 		 chrome.add( y++ ,Math.random());      
 	 
-		
 	}
 	
 }

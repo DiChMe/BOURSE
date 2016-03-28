@@ -8,8 +8,8 @@ public class Main {
 	public static void main(String[] args) throws InterruptedException {
 		CarnetOrdre carnet= new CarnetOrdre();
 		 Random r= new Random();
-		   Random k= new Random();
-			Random g= new Random();
+		 Random k= new Random();
+	     Random g= new Random();
 		
 		Date date = new Date();
 	//   Ordre aa = new AchatN(1,r.nextInt(89)+g.nextDouble(),k.nextInt(47),55,new Date(),"achat");
@@ -66,8 +66,8 @@ public class Main {
 	   int v=0;
 	   int ah=0;
 	  
-	  for(int index=0;index<10;index++){
-		   if(aleatoire(8)){
+	  for(int index=0;index<100000;index++){
+		   if(aleatoire(50)){
 			   double l=prix(40,50);
 			   int m=k.nextInt(47)+89;
 		   Ordre ach = new AchatN(1,l,m,55,new Date(),"achat");
@@ -107,7 +107,7 @@ public class Main {
 		   
 		  
 		 //  System.out.println("no");
-		  Thread.sleep(1000);
+		  Thread.sleep(5);
 		   }
 		   else{
 			   continue;
@@ -134,7 +134,7 @@ public class Main {
 	public static boolean aleatoire(int k){
 		Random al= new Random();
 		
-		return al.nextInt(10)<=k;
+		return al.nextInt(100)<=k;
 		
 	}
 }
